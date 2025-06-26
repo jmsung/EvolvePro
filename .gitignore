@@ -38,3 +38,22 @@ venv/
 *.venv
 env/
 *.env
+
+# PyTorch and ML model files
+**/*.pt
+**/*.pth
+**/*.pkl
+**/*.pickle
+**/*.joblib
+
+# ESM and PLM cache/model files
+.cache/
+**/.cache/
+**/torch_cache/
+**/huggingface_cache/
+
+# Large embedding and model output files
+**/*_embeddings.csv
+**/*_representations.csv
+**/embeddings/
+**/representations/
