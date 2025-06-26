@@ -1,0 +1,187 @@
+# EvolvePro Python AI Development Rules
+
+## Project Context
+This is EvolvePro, a protein evolution prediction tool using machine learning and protein language models (PLMs).
+
+## Core Technologies
+- Python 3.12
+- PyTorch (with MPS support for Apple Silicon)
+- ESM (Evolutionary Scale Modeling) protein language models
+- Pandas, NumPy, Scikit-learn
+- Jupyter Notebooks
+- Conda environments
+
+## Code Style & Standards
+
+### Python Best Practices
+- Use type hints for function parameters and return values
+- Follow PEP 8 style guidelines
+- Use descriptive variable and function names
+- Add docstrings to all functions and classes
+- Prefer f-strings over .format() or % formatting
+- Use pathlib.Path for file operations instead of os.path
+
+### Error Handling
+- Use specific exception types rather than bare except clauses
+- Add meaningful error messages
+- Use try-except blocks for external API calls and file operations
+- Log errors appropriately
+
+### Performance Considerations
+- Use vectorized operations with NumPy/Pandas when possible
+- Prefer list comprehensions over loops for simple operations
+- Use generators for large datasets
+- Consider memory usage for large protein datasets
+
+## Machine Learning Specific
+
+### Data Handling
+- Always validate input data shapes and types
+- Use pandas for structured data manipulation
+- Handle missing values explicitly
+- Normalize/standardize features when appropriate
+
+### Model Development
+- Set random seeds for reproducibility
+- Use cross-validation for model evaluation
+- Save model checkpoints and configurations
+- Document hyperparameters and their rationale
+
+### PyTorch Specific
+- Use device-agnostic code (support CPU, CUDA, MPS)
+- Move tensors to appropriate devices consistently
+- Use torch.no_grad() for inference
+- Clear GPU memory when appropriate with torch.cuda.empty_cache()
+
+## Protein Language Models (PLMs)
+
+### ESM Integration
+- Use batch processing for efficiency
+- Handle sequence length limitations
+- Cache embeddings to avoid recomputation
+- Support both mean and per-token representations
+
+### File Handling
+- Use FASTA format for protein sequences
+- Validate sequence formats and characters
+- Handle large sequence files efficiently
+- Use appropriate file naming conventions
+
+## Environment Management
+
+### Conda Environments
+- Keep environment.yml files updated
+- Use specific version constraints for critical packages
+- Separate environments for different PLMs if needed
+- Document environment setup in README
+
+### Dependencies
+- Pin versions for reproducibility
+- Use conda-forge channel when possible
+- Minimize dependency conflicts
+- Test installations on fresh environments
+
+## Code Organization
+
+### Project Structure
+- Keep source code in evolvepro/src/
+- Separate concerns: data processing, modeling, plotting
+- Use clear module and function names
+- Maintain consistent import patterns
+
+### Jupyter Notebooks
+- Use markdown cells for documentation
+- Clear outputs before committing
+- Keep cells focused and not too long
+- Use meaningful variable names
+- Add progress indicators for long-running cells
+
+## Testing & Validation
+
+### Unit Tests
+- Test data processing functions
+- Validate model outputs
+- Test edge cases and error conditions
+- Use pytest framework
+
+### Data Validation
+- Check data integrity after processing
+- Validate protein sequences
+- Ensure consistent data formats
+- Test with small datasets first
+
+## Documentation
+
+### Code Documentation
+- Document all public functions and classes
+- Explain complex algorithms and mathematical operations
+- Include usage examples in docstrings
+- Document expected input/output formats
+
+### User Documentation
+- Provide clear installation instructions
+- Include example usage
+- Document command-line interfaces
+- Explain configuration options
+
+## Performance & Optimization
+
+### Computational Efficiency
+- Profile code to identify bottlenecks
+- Use appropriate data structures
+- Minimize redundant computations
+- Consider parallel processing for independent tasks
+
+### Memory Management
+- Monitor memory usage for large datasets
+- Use generators for streaming data
+- Clear unused variables in long-running processes
+- Consider chunked processing for very large files
+
+## Security & Best Practices
+
+### File Handling
+- Validate file paths and permissions
+- Handle file not found errors gracefully
+- Use context managers for file operations
+- Avoid hardcoded paths
+
+### Data Privacy
+- Don't commit sensitive data to version control
+- Use environment variables for configuration
+- Sanitize user inputs
+- Follow data handling best practices
+
+## Specific to EvolvePro
+
+### Protein Evolution
+- Validate amino acid sequences
+- Handle wild-type and mutant sequences consistently
+- Use standard protein nomenclature
+- Document evolutionary metrics and scoring
+
+### Experimental Data
+- Validate experimental measurements
+- Handle missing or invalid data points
+- Use consistent units and scales
+- Document data sources and preprocessing steps
+
+## AI Assistant Guidelines
+
+### Code Generation
+- Always include necessary imports
+- Use the project's existing patterns and conventions
+- Consider edge cases and error handling
+- Optimize for readability and maintainability
+
+### Problem Solving
+- Break complex problems into smaller steps
+- Consider computational complexity
+- Suggest appropriate algorithms and data structures
+- Provide multiple approaches when relevant
+
+### Debugging
+- Check for common Python pitfalls
+- Validate data types and shapes
+- Consider environment and dependency issues
+- Suggest debugging strategies and tools 
