@@ -8,7 +8,6 @@ dependencies:
   - numpy<2.0
   - openpyxl
   - scikit-learn
-  - scikit-learn-extra
   - xgboost
   - matplotlib
   - seaborn
@@ -17,4 +16,5 @@ dependencies:
   - pytorch
   - pip
   - pip:
+    - scikit-learn-extra
     - -e .
